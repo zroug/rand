@@ -332,7 +332,7 @@ mod test {
         for (count, expected_count) in counts.into_iter().zip(expected_counts) {
             let difference = (count as f64 - expected_count).abs();
             let max_allowed_difference = NUM_SAMPLES as f64 / NUM_WEIGHTS as f64 * 0.1;
-            assert!(difference <=  max_allowed_difference);
+            assert!(difference <= max_allowed_difference);
         }
 
         assert_eq!(
