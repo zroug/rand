@@ -344,6 +344,10 @@ mod test {
             AliasMethodWeightedIndexError::WeightSumToSmall
         );
         assert_eq!(
+            AliasMethodWeightedIndex::new(vec![-0.0]).unwrap_err(),
+            AliasMethodWeightedIndexError::WeightSumToSmall
+        );
+        assert_eq!(
             AliasMethodWeightedIndex::new(vec![::core::f64::INFINITY]).unwrap_err(),
             AliasMethodWeightedIndexError::WeightSumToBig
         );
@@ -353,6 +357,10 @@ mod test {
         );
         assert_eq!(
             AliasMethodWeightedIndex::new(vec![-1.0]).unwrap_err(),
+            AliasMethodWeightedIndexError::InvalidWeight
+        );
+        assert_eq!(
+            AliasMethodWeightedIndex::new(vec![-::core::f64::INFINITY]).unwrap_err(),
             AliasMethodWeightedIndexError::InvalidWeight
         );
         assert_eq!(
