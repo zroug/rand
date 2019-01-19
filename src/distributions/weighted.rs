@@ -191,7 +191,7 @@ impl AliasMethodWeightedIndex {
             bigs_len -= 1;
 
             aliases[s] = b;
-            no_alias_odds[b] = no_alias_odds[s] + no_alias_odds[b] - 1.0;
+            no_alias_odds[b] = no_alias_odds[b] - 1.0 + no_alias_odds[s];
 
             if no_alias_odds[b] < 1.0 {
                 smalls_bigs.push_front(b);
