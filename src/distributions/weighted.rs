@@ -222,7 +222,7 @@ impl AliasMethodWeightedIndex {
 
         let mut aliases = Aliases::new(n);
 
-        // Split indices into those with small weights and those with big eights.
+        // Split indices into those with small weights and those with big weights.
         for (index, &odds) in no_alias_odds.iter().enumerate() {
             if odds < 1.0 {
                 aliases.push_small(index);
