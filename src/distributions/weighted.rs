@@ -258,7 +258,7 @@ impl AliasMethodWeightedIndex {
 
         // Prepare a distribution to sample random indices. Creating it beforehand
         // improves sampling performance.
-        let uniform_index = super::Uniform::new(0, no_alias_odds.len());
+        let uniform_index = super::Uniform::new(0, n);
 
         Ok(Self {
             aliases: aliases.aliases,
